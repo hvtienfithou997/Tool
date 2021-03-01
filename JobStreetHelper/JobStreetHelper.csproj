@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ES\ES.csproj" />
+    <ProjectReference Include="..\UVJHelper\UVJHelper.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="SeleniumExtras.WaitHelpers">
+      <HintPath>..\dll\SeleniumExtras.WaitHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver">
+      <HintPath>..\dll\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="XUtil">
+      <HintPath>..\dll\XUtil.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

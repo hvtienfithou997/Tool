@@ -1,0 +1,138 @@
+DOCUMENT API:
+
+	1, POST TIN TUYỂN DỤNG: [POST] Đầu vào nhận một <Object> có các properties:	[POST]/{object}	
+			  chuc_danh: Tên của job
+				  - required String
+			  ten_cong_ty: Job thuộc công ty nào
+				  -  String
+			  dia_chi: Địa chỉ làm việc của job
+			    -  String
+			  dia_chi_chi_tiet: Chi tiết địa chỉ
+			    -  String
+			  quy_mo_doanh_nghiep: Quy mô tổ chức
+			    -  String
+			  so_luong_tuyen: Số lượng cần tuyển
+			    -  Int 
+			  muc_luong: Mức lương
+			    -  String
+			  cap_bac: Cấp bậc làm việc (Nhân viên, thực tập...)
+			    -  String
+			  loai_hinh_cong_viec: Loại hình làm việc(Toàn thời gian, bán thời gian...)
+			    -  String
+			  nganh_nghe: Job thuộc ngành nghề nào.
+			    -  List<string>
+			  mo_ta_cong_viec: Mô tả công việc
+			    -  String
+			  yeu_cau_cong_viec: Yêu cầu công việc
+			    -  String
+			  quyen_loi_ung_ven: Quyền lợi ứng viên
+			    -  String
+			  link_jd: Link jd của job
+			    -  String
+			  yeu_cau_kinh_nghiem: Yêu cầu kinh nghiệm để làm việc trong job
+			   - String
+			  bang_cap: Bằng cấp(Đại học, cao đẳng...)
+			   - String
+			  gioi_tinh: Giới tính(Nam, nữ)
+			   -  String
+			  so_dien_thoai: Số điện thoại
+			   -  String
+			  goi_tin_tuyen_dung: Gói tin tuyển dụng
+			   -  String
+			  lien_he: Liên hệ 
+			   -  String
+			  kinh_nghiem_from: Kinh nghiệm làm việc từ
+			   - String
+			  kinh_nghiem_to: Kinh nghiệm làm việc đến 
+			   - String
+			  district: Quận, huyện
+			   -  String
+			  thuoc_tinh: 1 or 2 or 3			  
+			   - required Int
+			  url_tin_tuc: Đường dẫn tới tin sau khi đăng
+			   -required  String
+			nguoi_tao : tài khoản đăng tin
+				- required String
+		Responses: 
+				HTTP code, JSON
+				
+				[POST] api/dangtin/postin/{"bang_cap":"đại học","cap_bac":"Nhân viên","chuc_danh":"Lập trình viên","dia_chi":"Tố Hữu, Hà Nội","dia_chi_chi_tiet":"tòa nhà Viwaseen, số 48 Tố Hữu, Hà Nội","district":"Nam Từ Liêm","gioi_tinh":"tất cả","goi_tin_tuyen_dung":null,"kinh_nghiem_from":"3","kinh_nghiem_to":"5","lien_he":"Mrs Thu - Công ty cổ phần X-Media","link_jd":null,"loai_hinh_cong_viec":"Toàn thời gian","mo_ta_cong_viec":"- Công ty X-Media là một đơn vị SEO chuyên nghiệp, đã thực hiện nhiều webiste trên top Google","muc_luong":"6-12tr","nganh_nghe":"IT-Phần mềm","quy_mo_doanh_nghiep":"30-50","quyen_loi_ung_vien":null,"so_dien_thoai":"0945844114","so_luong_tuyen":5,"ten_cong_ty":"XMedia JSC","yeu_cau_cong_viec":null,"yeu_cau_kinh_nghiem":"- Có kinh nghiệm SEO tối thiểu 1 năm- Có khả năng phân tích, đánh giá từ khóa; xây dựng, phát triển nội dung và đưa ra kế hoạch SEO hiệu quả."}
+				
+				
+																	
+				return ({success = true, msg = "", data = {"id_tin":"abc123124","chuc_danh":"Lap trinh vien","url_tin_tuc":"joboko.com","thuoc_tinh":1,"nguoi_tao":"tienhv"});		
+	
+	2, API- Lấy danh sách tin tuyển dụng: [GET]/{term}/{nguoi_tao}/{page}/{page_size}
+	
+		Parameters: nhận các tham số: (term, nguoi_tao, page, pagesize)
+			+, term: điều kiện tìm kiếm
+				string
+			+, nguoi_tao: lọc theo người tạo
+				string
+			+, page: trang hiện tại
+				int
+			+, pagesize: số bản ghi trên trang
+				int
+		responses: HTTP code , JSON
+			return {success = true, msg = "", data = data, total_item = 150}
+	3, API - Cập nhật danh sách tin tức: [POST]/{id}/{thuoc_tinh}	
+			Parameters: 
+			+, id: id của tin tức			
+				required string	
+			+, thuoc_tinh
+				required int
+			json = "[
+			{
+             'id': 'DJnSCnQBtUkXexiSAZXV',
+             'ten_job': 'java',
+             'thuoc_tinh':'1',
+             },
+            {
+            'id': 'gPgMtXUBcn0nJN3F34mr',
+            'ten_job': 'php',
+            'thuoc_tinh':'2',
+            },
+            {
+            'id': '45nECnQBtUkXexiSN5Tn',
+            'ten_job': 'net',
+            'thuoc_tinh':'3',
+            }
+            ]";
+			
+			responses: return ( success = true, msg = "", data = json )
+		
+	4, API - Get CV bằng id của tin. [GET]/{id}
+	
+		Parameters: Id
+
+		json_data = [{
+    'app_id': 'xmedia.vn',
+    'ho_ten':'viet_tien',
+    'ngay_sinh':'1997',
+    'dia_chi': 'Ha Noi',
+    'vi_tri' : 'Lap trinh vien',
+    'email': 'tienhv@xmedia.vn',
+    'so_dien_thoai': '0945935480',
+    'hoc_van':'dai hoc',
+    'link_cv_online': 'https://google.com.vn',
+    'nguoi_tao': 'tienhv',
+    'ngay_tao': 0
+  },
+  {
+    'app_id': 'xmedia.vn',
+    'ho_ten':'viet_tien123123',
+    'ngay_sinh':'1995',
+    'dia_chi': 'Ha Noi VN',
+    'vi_tri' : 'Lap trinh vien java',
+    'email': 'tienhv@xmedia.vn',
+    'so_dien_thoai': '0945935480',
+    'hoc_van':'dai hoc',
+    'link_cv_online': 'joboko.com',
+    'nguoi_tao': 'tienhv',
+    'ngay_tao': 0
+  }]	
+		
+	Responses: return ( success = true, msg = "", data = json_data )
+		
+		
+	

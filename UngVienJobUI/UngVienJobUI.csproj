@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D9323B75-A083-44B0-89EF-D57252093203}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UngVienJobUI</RootNamespace>
+    <AssemblyName>UngVienJobUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AWSSDK, Version=2.3.55.2, Culture=neutral, PublicKeyToken=9f476d3089b52be3, processorArchitecture=MSIL">
+      <HintPath>..\packages\AWSSDK.2.3.55.2\lib\net45\AWSSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Elasticsearch.Net, Version=7.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elasticsearch.Net.7.7.0\lib\net461\Elasticsearch.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=3.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.3.1.4\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=3.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.3.1.4\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions, Version=3.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.FileExtensions.3.1.4\lib\netstandard2.0\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Json, Version=3.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Json.3.1.4\lib\netstandard2.0\Microsoft.Extensions.Configuration.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=3.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.3.1.4\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical, Version=3.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Physical.3.1.4\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing, Version=3.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileSystemGlobbing.3.1.4\lib\netstandard2.0\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.4.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.4\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Nest, Version=7.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\NEST.7.7.0\lib\net461\Nest.dll</HintPath>
+    </Reference>
+    <Reference Include="Nest.JsonNetSerializer, Version=7.0.0.0, Culture=neutral, PublicKeyToken=96c599bbe3e70f5d, processorArchitecture=MSIL">
+      <HintPath>..\packages\NEST.JsonNetSerializer.7.7.0\lib\net461\Nest.JsonNetSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SeleniumExtras.WaitHelpers, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetSeleniumExtras.WaitHelpers.3.11.0\lib\net45\SeleniumExtras.WaitHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.4.5.1\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.7.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="XUtil, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\XUtil.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Dialog\form_CareerBuilder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Dialog\form_CareerBuilder.Designer.cs">
+      <DependentUpon>form_CareerBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Dialog\form_CareerLink.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Dialog\form_CareerLink.Designer.cs">
+      <DependentUpon>form_CareerLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Dialog\form_Jobsgo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Dialog\form_Jobsgo.Designer.cs">
+      <DependentUpon>form_Jobsgo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Dialog\form_JobStreet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Dialog\form_JobStreet.Designer.cs">
+      <DependentUpon>form_JobStreet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Dialog\form_MyWork.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Dialog\form_MyWork.Designer.cs">
+      <DependentUpon>form_MyWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Dialog\UcPagingJob.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form_Dialog\UcPagingJob.Designer.cs">
+      <DependentUpon>UcPagingJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Dialog\ucPagingJobLinks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form_Dialog\ucPagingJobLinks.Designer.cs">
+      <DependentUpon>ucPagingJobLinks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Dialog\ucPhanTrang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form_Dialog\ucPhanTrang.Designer.cs">
+      <DependentUpon>ucPhanTrang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Dialog\ucUngVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form_Dialog\ucUngVien.Designer.cs">
+      <DependentUpon>ucUngVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site\CareerBuilderPost.cs" />
+    <Compile Include="Site\CareerLinkPost.cs" />
+    <Compile Include="Site\JobsGoPost.cs" />
+    <Compile Include="Site\MyWorkPost.cs" />
+    <Compile Include="Site\TopCvPost.cs" />
+    <Compile Include="Utils\ChiTietTinModel.cs" />
+    <Compile Include="Site\JobStreetPost.cs" />
+    <Compile Include="Utils\Config.cs" />
+    <Compile Include="Utils\GoodCvAPI.cs" />
+    <Compile Include="Utils\JDManager.cs" />
+    <Compile Include="Utils\Province.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Dialog\form_CareerBuilder.resx">
+      <DependentUpon>form_CareerBuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Dialog\form_CareerLink.resx">
+      <DependentUpon>form_CareerLink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Dialog\form_Jobsgo.resx">
+      <DependentUpon>form_Jobsgo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Dialog\form_JobStreet.resx">
+      <DependentUpon>form_JobStreet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Dialog\form_MyWork.resx">
+      <DependentUpon>form_MyWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Dialog\UcPagingJob.resx">
+      <DependentUpon>UcPagingJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Dialog\ucPagingJobLinks.resx">
+      <DependentUpon>ucPagingJobLinks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Dialog\ucPhanTrang.resx">
+      <DependentUpon>ucPhanTrang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Dialog\ucUngVien.resx">
+      <DependentUpon>ucUngVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CareerBuilderHelper\CareerBuilderHelper.csproj">
+      <Project>{f9e52cef-5311-4ed3-acc5-4a3e9de4c7c0}</Project>
+      <Name>CareerBuilderHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CareerLinkHelper\CareerLinkHelper.csproj">
+      <Project>{377e53b8-5b66-43af-a9d4-013c8b56383d}</Project>
+      <Name>CareerLinkHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ES\ES.csproj">
+      <Project>{68d300d6-dfa3-4323-ae40-68844bfcc9ad}</Project>
+      <Name>ES</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JobsGoHelper\JobsGoHelper.csproj">
+      <Project>{c30e6c9e-aad5-470d-a69c-3d36bd14a847}</Project>
+      <Name>JobsGoHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\JobStreetHelper\JobStreetHelper.csproj">
+      <Project>{c4634e02-5c21-4d4b-82d8-1e50dc909104}</Project>
+      <Name>JobStreetHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyWorkHelper\MyWorkHelper.csproj">
+      <Project>{B1C28E89-BD8E-4011-AEAC-8FFB4D27BACE}</Project>
+      <Name>MyWorkHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TopCVHelper\TopCVHelper.csproj">
+      <Project>{2028a0d1-bf29-4ed7-a664-14d3789d4a8e}</Project>
+      <Name>TopCVHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UngVienJobModel\UngVienJobModel.csproj">
+      <Project>{b4b1eb6e-6aef-428e-b7d4-06d2ce38ae3a}</Project>
+      <Name>UngVienJobModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UVJHelper\UVJHelper.csproj">
+      <Project>{b90050f9-ea31-4393-a77c-a0860fa629a7}</Project>
+      <Name>UVJHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="chromedriver.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
